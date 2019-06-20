@@ -1,16 +1,21 @@
 public class NumberSum {
 
-    public static int calculate(int a){
-        int b=0;
-        for (int i=0; i<=a; i++){
-            if (i%2==0){
-                b=b+i;
+    public static int calculate(int a) {
+        int b = 0;
+        while (a > 0) {
+            int rem= a%10;
+            a =a/10;
+
+            if (rem % 2 == 0) {
+                b = b + rem;
             }
 
+
         }
+
         return b;
-
     }
-
-
 }
+
+
+
