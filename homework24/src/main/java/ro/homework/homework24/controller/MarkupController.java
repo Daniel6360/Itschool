@@ -22,8 +22,8 @@ public class MarkupController {
     }
 
     @GetMapping
-    Markup getMarkupForDocumentWithId(@PathVariable int markupId, @RequestParam int documentId) {
-        return markupService.getMarkupForDocumentId(markupId, documentId);
+    Markup getMarkupForDocumentWithId(@PathVariable int markupId) {
+        return markupService.getMarkupsById(markupId);
     }
 
     @PostMapping
@@ -32,13 +32,13 @@ public class MarkupController {
     }
 
     @PutMapping
-    Markup updateMarkup(@PathVariable int docId, @PathVariable int markId, @RequestBody Markup markup) {
-        return markupService.updateMarkup(docId,markId,markup);
+    Markup updateMarkup( @PathVariable int markId, @RequestBody Markup markup) {
+        return markupService.updateMarkup(markId,markup);
     }
 
     @DeleteMapping("{markupId}")
-    void deleteMarkupForDocument(@PathVariable int docId, @PathVariable int markId){
-        markupService.deleteMarkupForDocument(docId, markId);
+    void deleteMarkupForDocument(@PathVariable int markId){
+        markupService.deleteMarkupForDocument( markId);
     }
 
 }

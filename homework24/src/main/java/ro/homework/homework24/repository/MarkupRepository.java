@@ -10,5 +10,6 @@ import java.util.List;
 public interface MarkupRepository extends JpaRepository<Markup, Integer> {
     List<Markup> findByDocumentId(int documentId);
 
+    Markup findByMarkupId(int markId);
 
 }

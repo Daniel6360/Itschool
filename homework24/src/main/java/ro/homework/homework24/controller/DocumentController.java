@@ -16,8 +16,8 @@ public class DocumentController {
     }
 
     @GetMapping
-    List<Document> getallDocuments() {
-        return documentService.getDocuments();
+    List<Document> getallDocuments(@RequestParam(required = false) String name) {
+        return documentService.getDocuments(name);
     }
 
     @GetMapping("{documentId}")

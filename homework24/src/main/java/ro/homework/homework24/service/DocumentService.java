@@ -16,7 +16,7 @@ public class DocumentService {
         this.repo = repo;
     }
 
-    public List<Document> getDocuments() {
+    public List<Document> getDocuments(String name) {
         return repo.findAll();
     }
 
