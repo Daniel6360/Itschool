@@ -18,8 +18,9 @@ public class Document {
     private String content;
     private String owner;
 
-    public Document( String name, String content, String owner) {
+    public Document(Integer documentId, String name, String content, String owner) {
 
+        this.documentId=documentId;
         this.name = name;
         this.content = content;
         this.owner = owner;

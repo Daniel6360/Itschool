@@ -10,5 +10,5 @@ import java.util.List;
 public interface DocumentRepository extends JpaRepository<Document,Integer> {
     List<Document> getByNameOrOwner(String name, String owner);
 
-    Document getDocumentById(int documentId);
+    Document getDocumentByDocumentId(int documentId);
 }

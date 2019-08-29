@@ -23,7 +23,7 @@ public class MarkupController {
 
     @GetMapping
     Markup getMarkupForDocumentWithId(@PathVariable int markupId, @RequestParam int documentId) {
-        return markupService.getMarkupForDocumentWithId(markupId, documentId);
+        return markupService.getMarkupForDocumentId(markupId, documentId);
     }
 
     @PostMapping

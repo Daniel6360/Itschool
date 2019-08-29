@@ -25,7 +25,7 @@ public class DocumentService {
     }
 
     public Document getDocumentById(int documentId) {
-        return repo.getDocumentById(documentId);
+        return repo.getDocumentByDocumentId(documentId);
 
     }
 

@@ -8,13 +8,7 @@ import java.util.List;
 
 @Repository
 public interface MarkupRepository extends JpaRepository<Markup, Integer> {
-    public List<Markup> getAllMarkupsForDocument(int documentId);
+    List<Markup> findByDocumentId(int documentId);
 
-    public Markup getMarkupForDocumentWithId(int markupId, int documentId);
 
-    public Markup addMarkupToDocument(int documentId, Markup markup);
-
-    public Markup updateMarkup(int documentId,int markupId, Markup markup);
-
-    void deleteMarkupForDocument(int docId,int markId);
 }

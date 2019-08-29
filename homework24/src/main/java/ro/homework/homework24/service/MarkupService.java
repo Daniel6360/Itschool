@@ -15,11 +15,11 @@ public class MarkupService {
     }
 
     public List<Markup> getAllMarkupsForDocument(int documentId){
-        return repository.getAllMarkupsForDocument(documentId);
+        return repository.findByDocumentId(documentId);
     }
 
-    public Markup getMarkupForDocumentWithId(int markupId,int documentId){
-        return repository.getMarkupForDocumentWithId(markupId,documentId);
+    public Markup getMarkupForDocumentId(int markupId,int documentId){
+        return repository.getMarkupForDocumentWithMarkupId(markupId,documentId);
     }
 
     public Markup addMarkupToDocument(int documentId, Markup markup){
@@ -28,11 +28,11 @@ public class MarkupService {
     }
 
     public Markup updateMarkup(int docId, int markId, Markup markup){
-        return repository.updateMarkup(docId, markId,markup);
+        return repository.updateMarkupIdbyDocumentId(docId, markId,markup);
     }
 
     public void deleteMarkupForDocument(int docId, int markId){
-        repository.deleteMarkupForDocument(docId,markId);
+        repository.deletebyDocumentId(docId,markId);
     }
 
 }
