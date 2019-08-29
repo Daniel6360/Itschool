@@ -1,12 +1,15 @@
 package ro.homework.homework24.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Objects;
 @Entity
 @Table(name="Markup")
 public class Markup {
+    @Id
+    @GeneratedValue
     private Integer markupId;
     private Integer documentId;
     private String content;

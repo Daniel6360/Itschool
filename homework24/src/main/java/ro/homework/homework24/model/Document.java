@@ -10,6 +10,7 @@ import java.util.Objects;
 @Entity
 @Table(name="Document")
 public class Document {
+
     @Id
     @GeneratedValue
     private Integer documentId;

@@ -1,28 +1,48 @@
 package ro.homework.homework24.service;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
-import ro.homework.homework24.DocumentRepository;
-import ro.homework.homework24.controller.DocumentController;
 import ro.homework.homework24.model.Document;
+import ro.homework.homework24.repository.DocumentRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 @Service
 public class DocumentService {
 
-    private final List<Document> documents = new ArrayList<>();
+    private DocumentRepository repo;
 
     public DocumentService(DocumentRepository repo) {
         this.repo = repo;
     }
 
-    DocumentRepository repo;
+    public List<Document> getDocuments() {
+        return repo.findAll();
+    }
 
     public List<Document> getByNameOrOwner(String name, String owner) {
         return repo.getByNameOrOwner(name, owner);
+    }
+
+    public Document getDocumentById(int documentId) {
+        return repo.getDocumentById(documentId);
+
+    }
+
+    public Document addDocument(Document document) {
+        repo.save(document);
+        return document;
+    }
+
+    public Document updateDocument(int documentId, Document document) {
+        repo.deleteById(documentId);
+        repo.save(document);
+        return document;
+    }
+
+    public void deleteDocument(int documentId) {
+        repo.deleteById(documentId);
+
     }
 
 
